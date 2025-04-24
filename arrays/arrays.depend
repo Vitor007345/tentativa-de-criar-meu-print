@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1745490098 source:c:\users\1589988\desktop\bagulhos em c\arrays\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+
