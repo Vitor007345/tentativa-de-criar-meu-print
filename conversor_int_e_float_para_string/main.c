@@ -13,6 +13,11 @@ char* intToStr(int num){
     int numD = numDigits(num);
     char* digitosChar = "0123456789";
     char* str = malloc((numD + 1)*sizeof(char));
+    if(str == NULL){
+        printf("erro na alocação da intToStr");
+        fflush(stdout);
+        exit(1);
+    }
     for(int i = (numD - 1); i >= 0; i--){
         str[i] = digitosChar[(num % 10)];
         num /= 10;
@@ -22,16 +27,16 @@ char* intToStr(int num){
 
 }
 
-char* floatToString(float num, int casas){
-    int parteInteira = floor(num);
+char* floatToStr(float num, int casas){
+    int parteInteira = (int)num;
     int numDParteInt = numDigits(parteInteira);
     char* strInteira = intToStr(parteInteira);
-    char* digitosChar = "0123456789";
-    int parteFloat = (int)((num - (float)parteInteira) * pow(10, casas));
+    //char* digitosChar = "0123456789";
+    int parteFloat = round((num - (float)parteInteira) * pow(10, casas));
     int numDparteFloat = numDigits(parteFloat);
     char* strFloatPrevia = intToStr(parteFloat);
     int qntDeCaracteresStrFinal = numDParteInt + 1 + casas;
-    char* strFinal = malloc((qntDeCaracteresStrFinal + 1)*sizeof(char));
+    char* strFinal = calloc(qntDeCaracteresStrFinal + 1,sizeof(char));
     char* strFloat;
     if(numDparteFloat != casas){
         strFloat = malloc((casas + 1)*sizeof(char));
@@ -71,6 +76,11 @@ char* floatToString(float num, int casas){
 
 int main()
 {
-    printf("%s", intToStr(2353));
+    //(stdout, NULL, _IONBF, 0);
+    printf("teste\n");
+    char* texto = floatToStr(54321.252315, 4);
+    printf("%s", texto);
+    printf("\nFoi essa trolha");
+    free(texto);
     return 0;
 }

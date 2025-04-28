@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1745539371 source:c:\users\vitor\downloads\tentativa-de-criar-meu-print-main\flottostr_menos_bugado\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<stdarg.h>
+

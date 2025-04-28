@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1745521781 source:c:\users\vitor\downloads\tentativa-de-criar-meu-print-main\conversor_int_e_float_para_string\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
